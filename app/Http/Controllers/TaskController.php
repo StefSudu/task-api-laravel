@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\TaskResource;
 use App\Models\Task;
 use Illuminate\Http\Request;
 
@@ -12,10 +13,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return response()->json([
-            "Message" => "All tasks",
-            "Data" => Task::all()
-        ], 200);
+        return TaskResource::collection(Task::all());
     }
 
     /**
@@ -31,7 +29,6 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
-        
     }
 
     /**
