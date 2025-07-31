@@ -23,7 +23,7 @@ class ReplaceTaskRequest extends FormRequest
     {
         return [
             'data.attributes.title' => 'required|string|unique:task,title',
-            'data.attributes.description' => 'required|string|task,description',
+            'data.attributes.description' => 'nullable|string',
             'data.attributes.status' => 'required|string|in:pending,in-progress,complete'
         ];
     }
