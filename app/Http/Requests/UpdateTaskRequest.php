@@ -23,7 +23,7 @@ class UpdateTaskRequest extends FormRequest
     {
         return [
             'data.attributes.title' => 'sometimes|string|unique:task,title',
-            'data.attributes.description' => 'sometimes|string|unique:task,description',
+            'data.attributes.description' => 'sometimes|string|task,description',
             'data.attributes.status' => 'sometimes|string|in:pending,in-progress,complete'
         ];
     }
